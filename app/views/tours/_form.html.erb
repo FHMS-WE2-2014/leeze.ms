@@ -28,8 +28,8 @@
     <%= f.text_area :url %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.collection_select :category_ids, Category.all, :id, :name, {},  multiple: true %>
+    <%= f.label :categories %><br>
+    <%= f.collection_select :category_ids, Category.all, :id, :name, { selected: @tour.categories.map(&:id), include_hidden: false},  multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit %>
