@@ -1,16 +1,17 @@
 <h1>All tours</h1>
-<table>
+<table class="table table-striped">
   <thead>
   <tr>
-    <th>Title</th>
+    <th colspan="4">Title</th>
   </tr>
   </thead>
   <tbody>
   <% @tours.each do |tour| %>
     <tr>
-      <td><%= link_to tour.title, tour %></td>
+      <td><%= tour.title %></td>
+      <td><%= link_to 'Show', tour %></td>
       <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-      <td><%= link_to 'Destroy', destroy_tour_path(tour), prompt: 'Are you sure?' %></td>
+      <td><%= link_to 'Destroy', tour, prompt: 'Are you sure?' %></td>
     </tr>
   <% end %>
   </tbody>
